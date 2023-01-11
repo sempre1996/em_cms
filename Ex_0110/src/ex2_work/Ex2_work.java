@@ -13,46 +13,60 @@ public class Ex2_work {
 	//03 05 07
 	//04 09 02
 	Scanner sc = new Scanner(System.in);
-	int x = sc.nextInt();
 	
-	int[][] m = new int[x][x];
+	int [][]arr;
+	int num = 1;
+	int y = 0;
+	int x = 0;
 	
-	int i = 0;
-	int j = x / 2;
+	System.out.print("사이즈 : ");
+	int size = sc.nextInt();
 	
-	for (int a = 0; a <= x * x; a++) {
-		m[i][j] = a;
-		if ( a % x != 0) {
-			if (i == 0) {
-				i = x - 1;
-			}else {
-				i--;
-			}// else 
-			if (j == x - 1) 
-				j = 0;
-			else 
-				j++;
-		 }  else { if (i == x - 1) {
-				   i = 0;
-			}else 
-				i++;
-			}
-				
+	x = size / 2;
+	
+	// 배열의 크기
+	arr = new int[size][size];
+	
+	// 마방진을 그릴 while문
+	
+	while ( num <= size * size ) {
+		 
+		arr[y][x] = num;
+		
+		if ( num % size == 0) {
+			y++;
 			
-		}// out if
-		for (int k = 0; k < m.length; k++) {
-			for (int k2 = 0; k2 < m[k].length; k2++) {
-				 System.out.printf("%02d ",m[k][k2]);
-			}
-			System.out.println();
-		}
+		}else {
+			
+			y--;
+			x++;
+			
+		}// else
 		
+		if ( y < 0 ) {
+			y = size - 1;
+			
+		}// if
 		
-	}//for
+		if ( x >= size ) {
+			x = 0;
+		}// if
+		num++;
+		
+	}// while
 	
-	}// main
-
-
+	// arr 배열에 담긴 모든 값을 화면에 출력
+	
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			System.out.printf("%02d ", arr[i][j]);
+		}//inner
+		System.out.println();
+	 }//outer
+	
+   }//main
+	
+}
 
 
 
