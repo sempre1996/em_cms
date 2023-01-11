@@ -1,5 +1,7 @@
 package ex2_string;
 
+import java.util.Scanner;
+
 public class Ex2_work {
 	public static void main(String[] args) {
 		
@@ -7,8 +9,25 @@ public class Ex2_work {
 		
 		// 입력 : Aoasijfowiejaoisjdlaksjdaoidjalks
 		// a의 갯수 :
+		String str;
+		int count = 0;
 		
-		
+		System.out.print("입력 : ");
+	   Scanner sc = new Scanner(System.in);
+	   str = sc.next();
+	   
+	   for (int i = 0; i < str.length(); i++) {
+		 
+		   if (str.charAt(i) == 'a') {
+			   count++;
+		}//if
+		   
+	   }// for
+	   System.out.println("a의 갯수 : " + count);
+	   
+	   
+	
+	
 		
 		
 		
