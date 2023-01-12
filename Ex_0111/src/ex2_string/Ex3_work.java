@@ -14,18 +14,18 @@ public class Ex3_work {
 		// 값 : abc
 		// abc 는 회문수가 아닙니다.
 		
-     String str = "";
-     String str2 = "";
+     
+     String rev = "";
      
      System.out.print("값 : ");
      Scanner sc = new Scanner(System.in);
-     str = sc.next();
+     String str = sc.next(); // 원본 값
      
-     for (int i = str.length(); i > 0; i--) {
-		str2 += str.charAt(i - 1); 
+     for (int i = str.length()-1; i >= 0; i--) {
+		rev += str.charAt(i); 
 	 }// for
 		
-	 if (str.equals(str2)) {
+	 if (str.equals(rev)) {
 		System.out.println(str + "은(는) 회문수 입니다.");
 	}else {
 		System.out.println(str + "은(는) 회문수가 아닙니다.");
