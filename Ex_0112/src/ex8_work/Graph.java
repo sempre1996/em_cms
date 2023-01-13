@@ -8,7 +8,7 @@ public class Graph {
 			for (int j = 0; j < arr[i]; j++) {
 				System.out.print("#");
 			}//inner
-			System.out.println(" " + arr[i] + "°³");
+			System.out.println(" " + arr[i]);
 		}//outer
 	}
 	
