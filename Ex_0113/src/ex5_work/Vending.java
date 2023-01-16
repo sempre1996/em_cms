@@ -2,59 +2,61 @@ package ex5_work;
 
 public class Vending {
 	
-	private Can[] can = new Can[3];
-	private int money = 0;
+	private Can[] can = new Can[5];
+	private int money;
+	// 자판기에 음료수를 세팅(초기화) 하는 메서드
+	public void canInit() {
+		
+	for (int i = 0; i < can.length; i++) {
+		// 배열의 각 index를 메모리 할당
+		can[i] = new Can();
+		
+	}// for	
+		
+	can[0].setCanName("fanta");
+	can[0].setPrice(1000);
 	
-	public void init() {
-		for (int i = 0; i < can.length; i++) {
-			  can[i] = new Can();
-		}//for
+	can[1].setCanName("latte");
+	can[1].setPrice(1100);
 		
-		can[0].setCanName("콜라");
-		can[0].setPrice(900);
-		
-		can[1].setCanName("환타");
-		can[1].setPrice(1000);
-		
-		can[2].setCanName("사이다");
-		can[2].setPrice(800);
-
-	}
-
+	can[2].setCanName("orange");
+	can[2].setPrice(1200);
+	
+	can[3].setCanName("coke");
+	can[3].setPrice(1300);
+	
+	can[4].setCanName("banana");
+	can[4].setPrice(1400);
+	}// canInit
+	
+	// 사용자가 입력한 범위의 금액 안에서 먹을 수 있는 음료만 출력
 	public void showCans( int money ) {
-		for (int i = 0; i < can.length; i++) {
+		this.money = money;
+		
+		for ( int i = 0; i < can.length; i++) {
 			if (can[i].getPrice() <= money) {
-				System.out.printf("%s : %d원\n", can[i].getCanName() , can[i].getPrice());
-			}
-		}
-		System.out.println("=======================");
-	}
-	
-	public void outCan( String name ) {
-		for (int i= 0; i < can.length; i++) {
-			if (name.equals(can[i].getCanName())) {
-				if (money >= can[i].getPrice()) {
-					
-				}else {
-					System.out.println("잔액 부족");
-				}
-			}else {
-				System.out.println("해당 물건이 없습니다");
-				System.out.println("잔돈 : " + money);
 				
-				System.out.println(can[i].getCanName()+" 선택");
-				money -= can[i].getPrice();
-				System.out.println("잔돈 : " + money);
-			}
-			 } 
-		   
-			
-		  }	
+				System.out.printf("%s - %d원\n", 
+						can[i].getCanName(), can[i].getPrice());
+			}//if
+		}// for
+		
+	}//showCans
+	
+	// 사용자가 선택한 음료를 제공하고 잔액을 반환
+	public int outCan( String name ) {
+		for (int i = 0; i < can.length; i++) {
+			if (can[i].getCanName().equalsIgnoreCase(name)) {
+				System.out.printf("%s을(를) 선택 함\n", name);
+				
+				System.out.printf("잔액 : %d원\n", money -= can[i].getPrice());
+			}//if
 		}//for
+		return money;
+		
+	}//outcan
 	
-	
-	
-	
+}
 	
 	
 	

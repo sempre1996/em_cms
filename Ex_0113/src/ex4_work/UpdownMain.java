@@ -16,16 +16,36 @@ public class UpdownMain {
 		// up
 		// 숫자 : 25
 		// 3회만에 정답!!
-		Updown ud = new Updown();
+		//Updown ud = new Updown();
+		//Scanner sc = new Scanner(System.in);
+		
+		
+		//while (ud.result) {
+			//System.out.print("숫자 : ");
+			//int me = sc.nextInt();
+			//ud.check(me);
+			//System.out.println("====================");
+		//}//while
+		
 		Scanner sc = new Scanner(System.in);
+		Updown ud = new Updown();
+		
+		while (true) {
+			
+		
+		System.out.println("숫자 : ");
+		int n = sc.nextInt();
+		boolean res = ud.checkResult(n);
+		
+		if ( res == true ) {
+			// 정답을 맞힌 경우
+		 break; // while 문을 빠져나간다.
+		}//if
+		
+	   }// while
 		
 		
-		while (ud.result) {
-			System.out.print("숫자 : ");
-			int me = sc.nextInt();
-			ud.check(me);
-			System.out.println("====================");
-		}//while
+		
 		
 		
 		

@@ -16,25 +16,21 @@ public class VendingMain {
     // >> coke 
     // coke(을)를 선택하셨습니다.
     // 잔액 : 100원
-    	Vending vc = new Vending();
+    
     	Scanner sc = new Scanner(System.in);
+    	Vending ven = new Vending();
+        ven.canInit();   
     	
-    	vc.init();
-    	
-    	System.out.println("금액을 입력하세요");
+        System.out.println("insert coin : ");
     	int money = sc.nextInt();
     	
-    	vc.showCans(money);
-    	System.out.println("음료를 선택하세요");
-    	String name = sc.next();
+    	ven.showCans(money); // 마실 수 있는 음료수 목록
     	
-    	vc.outCan(name);
+    	System.out.print(">> ");
+    	String select = sc.next(); // 음료수 이름 입력 
     	
-    	
-    	
-    	
-    	
-    	
+    	// 음료제공 및 잔돈 반환
+    	ven.outCan(select);
     	
     	
 	}//main
