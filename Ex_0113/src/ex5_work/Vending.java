@@ -5,6 +5,8 @@ public class Vending {
 	private Can[] can = new Can[5];
 	private int money;
 	// 자판기에 음료수를 세팅(초기화) 하는 메서드
+	
+	
 	public void canInit() {
 		
 	for (int i = 0; i < can.length; i++) {

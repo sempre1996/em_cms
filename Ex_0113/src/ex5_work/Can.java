@@ -4,6 +4,7 @@ public class Can {
 	private String canName;
 	private int price;
 	
+	
 	public String getCanName() {
 		return canName;
 	}
@@ -13,7 +14,7 @@ public class Can {
 	public int getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+    public void setPrice(int price) {
 		this.price = price;
 	}
 	
